@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mazegame</title>
+    <style>
+        body {
+            background-color: lightcyan;
+        }
+
+        .main {
+            display: flex;
+        }
+
+        #board {
+            border: 20px solid purple;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .welcomeText {
+            width: 200px;
+        }
+
+        #board .obst {
+            background-color: slategray;
+            position: absolute;
+        }
+
+        #border .obst {
+            background-color: purple;
+            position: absolute;
+        }
+
+        .obstacle0 {
+            width: 20px;
+            height: 100px;
+            top: 280px;
+            left: 973px;
+        }
+
+        .obstacle1 {
+            width: 100px;
+            height: 370px;
+            bottom: 293px;
+        }
+
+        .obstacle2 {
+            width: 50px;
+            height: 270px;
+            top: 100px;
+            left: 710px;
+        }
+
+        .obstacle3 {
+            width: 300px;
+            height: 100px;
+            left: 600px;
+            bottom: 293px;
+        }
+
+        .obstacle4 {
+            width: 150px;
+            height: 150px;
+            top: 247px;
+            left: 770px;
+        }
+
+        .obstacle5 {
+            width: 170px;
+            height: 130px;
+            top: 100px;
+            left: 730px;
+        }
+
+        .obstacle6 {
+            width: 65px;
+            height: 365px;
+            top: 115px;
+            left: 920px;
+        }
+
+        .obstacle7 {
+            width: 20px;
+            height: 440px;
+            left: 580px;
+            top: 80px;
+        }
+
+        .obstacle8 {
+            width: 20px;
+            height: 440px;
+            top: 80px;
+            left: 1000px;
+        }
+
+        .obstacle9 {
+            height: 20px;
+            width: 320px;
+            top: 80px;
+            left: 680px;
+        }
+
+        .obstacle10 {
+            height: 20px;
+            width: 400px;
+            top: 500px;
+            left: 600px;
+        }
+
+        .start {
+            height: 40px;
+        }
+
+        .finish {
+            height: 30px;
+        }
+
+        .start,
+        .finish {
+            background-color: yellow;
+            width: 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .start {
+            top: -36px;
+        }
+
+        .start p {
+            padding-top: 10px;
+        }
+
+        .finish {
+            top: 308px;
+            left: 320px;
+            z-index: 1;
+        }
+
+        .finish p {
+            padding-top: 6px;
+        }
+
+        .btn {
+            position: absolute;
+            left: 380px;
+            top: 480px;
+            font-size: 1.5em;
+        }
+
+        div.red {
+            background-color: red;
+        }
+
+        div.green {
+            background-color: green;
+        }
+
+        div.blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="H1">The Maze</h1>
+
+    <div class="main">
+        <div class="welcomeText">
+            <p>
+                <strong>Welcome to my first game.</strong><br><br> Here are some rules: <br><br>
+                <strong>1.</strong> The goal of this game is to get from start to finish.<br>
+                <strong>2.</strong> While doing so you cannot touch the grey obstacles inside the purple box.<br>
+                <strong>3.</strong> Only the area inside the purple zone is alowed.<br>
+                <strong>4.</strong> Have fun! and Thank you for trying it out.<br>
+            </p>
+        </div>
+
+        <div id="board">
+            <div class="start" onmouseover="fnStart()">
+                <p>start</p>
+            </div>
+            <div class="obstacle0 obst" onmouseover="fnGameOver()">
+            </div>
+            <div class="obstacle1 obst" onmouseover="fnGameOver()">
+            </div>
+            <div class="obstacle2 obst" onmouseover="fnGameOver()">
+            </div>
+            <div class="obstacle3 obst" onmouseover="fnGameOver()">
+            </div>
+            <div class="obstacle4 obst" onmouseover="fnGameOver()">
+            </div>
+            <div class="obstacle5 obst" onmouseover="fnGameOver()">
+            </div>
+            <div class="obstacle6 obst" onmouseover="fnGameOver()">
+            </div>
+            <div class="finish" onmouseover="fnFinish()">
+                <p>finish</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="border">
+        <div class="obstacle7 obst" onmouseover="fnGameOver()">
+        </div>
+        <div class="obstacle8 obst" onmouseover="fnGameOver()">
+        </div>
+        <div class="obstacle9 obst" onmouseover="fnGameOver()">
+        </div>
+        <div class="obstacle10 obst" onmouseover="fnGameOver()">
+        </div>
+    </div>
+
+    <button class="btn" onclick="reset()">Reset game</button>
+
+    <script src="js/mazegame.js"></script>
+</body>
+
+</html>
